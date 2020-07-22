@@ -1,6 +1,6 @@
 # KTool
 
-A tool help Windows users
+A tool helps Windows users
 
 ## TODOs
 

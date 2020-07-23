@@ -1,13 +1,12 @@
-﻿using System.Collections.Generic;
-using System.Diagnostics;
+﻿using System.Diagnostics;
 
 namespace KTool.Controller.Shared
 {
     class Cmd
     {
-        public static List<string> GetOutput(string app, string arg)
+        public static string[] GetOutput(string app, string arg)
         {
-            var l = new List<string>();
+            string s = string.Empty;
             using (var process = new Process())
             {
                 process.StartInfo.FileName = app;
@@ -21,12 +20,12 @@ namespace KTool.Controller.Shared
                 string output = process.StandardOutput.ReadToEnd();
 
                 if (string.IsNullOrWhiteSpace(output) == false)
-                    l.Add(output.Trim());
+                    s = output.Trim();
 
                 process.WaitForExit();
                 process.Close();
             }
-            return l;
+            return s.Split('\n');
         }
     }
 }

@@ -48,21 +48,47 @@ namespace KTool.View
 
         private void btnApply_Click(object sender, EventArgs e)
         {
+            if (!ckbEnable.Checked)
+            {
+                CoreControl.Remove();
+                return;
+            }
             if (int.TryParse(txbNum.Text, out int x))
             {
+                if (x < 1)
+                {
+                    // Not a valid input
+                    Log.e("CCC -> Faild #0");
+                    return;
+                }
+
+                if (x > 31)
+                {
+                    // Too large
+                    Log.w("CCC -> Input too large, disable control?");
+                }
+
                 if (CoreControl.Set(x))
                 {
-                    // Failed
+                    // Success
+                    Log.i("CCC -> Success #0");
                 }
                 else
                 {
-                    // Success
+                    // Failed
+                    Log.e("CCC -> Faild #1");
                 }
             }
             else
             {
                 // Not a valid integer
+                Log.e("CCC -> Faild #2");
             }
+        }
+
+        private void btnCancle_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

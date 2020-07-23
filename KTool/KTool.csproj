@@ -32,6 +32,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationManifest>app.manifest</ApplicationManifest>
@@ -54,6 +55,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controller\CoreControl.cs" />
+    <Compile Include="Controller\Log.cs" />
     <Compile Include="Controller\Shared\Cmd.cs" />
     <Compile Include="Controller\Shared\Extension.cs" />
     <Compile Include="View\MainWindow.cs">

@@ -6,14 +6,16 @@
         {
             if (i < 1) return Remove();
             var l = Shared.Cmd.GetOutput("bcdedit.exe", "/set {current} numproc " + i);
-            if (l.Count > 0) return false;
+            if (l.Length < 1) return false;
+            if (l[0].Trim() != "The operation completed successfully.") return false;
             return true;
         }
 
         public static bool Remove()
         {
             var l = Shared.Cmd.GetOutput("bcdedit.exe", "/deletevalue {current} numproc");
-            if (l.Count > 0) return false;
+            if (l.Length < 1) return false;
+            if (l[0].Trim() != "The operation completed successfully.") return false;
             return true;
         }
 
@@ -22,7 +24,7 @@
             var l = Shared.Cmd.GetOutput("bcdedit.exe", "/enum {current}");
 
             string x = "0";
-            for (int i = 0; i < l.Count; ++i)
+            for (int i = 0; i < l.Length; ++i)
             {
                 x = l[i].Trim();
                 if (x.StartsWith("numproc"))

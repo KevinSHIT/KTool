@@ -131,7 +131,9 @@
             this.Controls.Add(this.materialTabSelector1);
             this.Controls.Add(this.mtcCategory);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.MaximizeBox = false;
             this.Name = "MainWindow";
+            this.Sizable = false;
             this.Text = "KTool by Kevin Sanchez";
             this.mtcCategory.ResumeLayout(false);
             this.tbpNetwork.ResumeLayout(false);

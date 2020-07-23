@@ -29,9 +29,10 @@
         private void InitializeComponent()
         {
             this.ckbEnable = new MaterialSkin.Controls.MaterialCheckBox();
-            this.materialFlatButton1 = new MaterialSkin.Controls.MaterialFlatButton();
+            this.btnApply = new MaterialSkin.Controls.MaterialFlatButton();
             this.lblNum = new MaterialSkin.Controls.MaterialLabel();
             this.txbNum = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.btnCancle = new MaterialSkin.Controls.MaterialFlatButton();
             this.SuspendLayout();
             // 
             // ckbEnable
@@ -51,21 +52,22 @@
             this.ckbEnable.UseVisualStyleBackColor = true;
             this.ckbEnable.CheckedChanged += new System.EventHandler(this.ckbEnable_CheckedChanged);
             // 
-            // materialFlatButton1
+            // btnApply
             // 
-            this.materialFlatButton1.AutoSize = true;
-            this.materialFlatButton1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialFlatButton1.Depth = 0;
-            this.materialFlatButton1.Icon = null;
-            this.materialFlatButton1.Location = new System.Drawing.Point(259, 176);
-            this.materialFlatButton1.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.materialFlatButton1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialFlatButton1.Name = "materialFlatButton1";
-            this.materialFlatButton1.Primary = false;
-            this.materialFlatButton1.Size = new System.Drawing.Size(75, 36);
-            this.materialFlatButton1.TabIndex = 1;
-            this.materialFlatButton1.Text = "Apply";
-            this.materialFlatButton1.UseVisualStyleBackColor = true;
+            this.btnApply.AutoSize = true;
+            this.btnApply.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnApply.Depth = 0;
+            this.btnApply.Icon = null;
+            this.btnApply.Location = new System.Drawing.Point(174, 175);
+            this.btnApply.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btnApply.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnApply.Name = "btnApply";
+            this.btnApply.Primary = false;
+            this.btnApply.Size = new System.Drawing.Size(75, 36);
+            this.btnApply.TabIndex = 1;
+            this.btnApply.Text = "Apply";
+            this.btnApply.UseVisualStyleBackColor = true;
+            this.btnApply.Click += new System.EventHandler(this.btnApply_Click);
             // 
             // lblNum
             // 
@@ -99,14 +101,31 @@
             this.txbNum.TabStop = false;
             this.txbNum.UseSystemPasswordChar = false;
             // 
+            // btnCancle
+            // 
+            this.btnCancle.AutoSize = true;
+            this.btnCancle.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnCancle.Depth = 0;
+            this.btnCancle.Icon = null;
+            this.btnCancle.Location = new System.Drawing.Point(257, 175);
+            this.btnCancle.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btnCancle.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnCancle.Name = "btnCancle";
+            this.btnCancle.Primary = false;
+            this.btnCancle.Size = new System.Drawing.Size(87, 36);
+            this.btnCancle.TabIndex = 7;
+            this.btnCancle.Text = "Cancle";
+            this.btnCancle.UseVisualStyleBackColor = true;
+            // 
             // CpuCoreControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(359, 235);
+            this.Controls.Add(this.btnCancle);
             this.Controls.Add(this.txbNum);
             this.Controls.Add(this.lblNum);
-            this.Controls.Add(this.materialFlatButton1);
+            this.Controls.Add(this.btnApply);
             this.Controls.Add(this.ckbEnable);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
@@ -121,8 +140,9 @@
 
         #endregion
         private MaterialSkin.Controls.MaterialCheckBox ckbEnable;
-        private MaterialSkin.Controls.MaterialFlatButton materialFlatButton1;
+        private MaterialSkin.Controls.MaterialFlatButton btnApply;
         private MaterialSkin.Controls.MaterialLabel lblNum;
         private MaterialSkin.Controls.MaterialSingleLineTextField txbNum;
+        private MaterialSkin.Controls.MaterialFlatButton btnCancle;
     }
 }
